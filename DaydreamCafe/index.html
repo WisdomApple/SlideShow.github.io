@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>DaydreamCafe</title>
+    <meta name='robots' content='index,follow'/>
+    <link rel='stylesheet' id='generalStyle-css' href='css/style_light.css' type='text/css'/>
+    <link rel='stylesheet' id='contentFont-css'
+          href='http://fonts.googleapis.com/css?family=PT+Sans:regular&amp;subset=cyrillic,latin' type='text/css'
+          media='all'/>
+    <link id='headerFont-css' href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'/>
+    <script type='text/javascript' src='js/jquery-1.7.min.js'></script>
+    <script type='text/javascript' src='js/jquery.easing.1.3.js'></script>
+    <script type='text/javascript' src='js/jquery.quicksand.js'></script>
+    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="js/jquery.history.js"></script>
+    <script type='text/javascript' src="main.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico"/>
+    <script type='text/javascript'>
+        var bgTime = 5000; // bg Image/Video animation display duration
+        var bgPaused = false; // bg Image/Video animation paused
+        var menuTime = 600; // menu delay
+        var autoPlay = true; // Background audio autoplay
+        var loop = true; // Background audio loop or next song
+        var twtTime = 3000; // Twitter display duration
+        var prettyTheme = 'light_square'; //Pretty Photo Plug-in Teheme
+
+        var normalFade = false; // Normal fade animation
+        var frontPage = ''; // Front Page URL
+        var btnSoundURL = 'http://files.renklibeyaz.com/sounds/button2'; // Button Hover Sound
+        var menuPositionFixed = false;
+
+        //v1.2
+        var videoPaused = false;
+        var menuAlwaysOpen = false;
+    </script>
+    <script type='text/javascript' src="js/froogaloop.js"></script>
+    <style type="text/css">
+    </style>
+</head>
+<body>
+<div id="body-wrapper">
+    <!-- BEGIN: Main Elements; Please don't change these items -->
+    <div id="bgImage">
+        <div id="bgImageWrapper"></div>
+    </div>
+    <div id="bgPattern"></div>
+
+    <!-- END: Main Elements -->
+    <!-- BEGIN: Vertical Side Bar -->
+    <!--
+        // Every <li> includes Thumbnail, Video or Background Image
+        Caption and Description elementes
+    -->
+    <ul id="bgImages">
+        <!-- BEGIN: Background Element -->
+        <li>
+            <!-- Thumbnail Image must be 120x80px  and class="thumb" -->
+            <img class="thumb" src="images/background/点兔S1_01.webp" alt=""/>
+            <!--
+                If you want to use IMAGE at background its width must be between 1024x768px and 1920x1080px. And you must use class="source".
+                If you want to use VIDEO at background it must be in iframe tags like below;
+                <iframe src="http://player.vimeo.com/video/18303923?title=0&amp;byline=0&amp;portrait=0" width="400" height="225" frameborder="0" webkitAllowFullScreen allowFullScreen></iframe>
+                Note: You must define its width and height values of your original video. It supports youtube or vimeo.
+            -->
+            <img class="source" src="images/background/点兔S1_01.webp" alt=""/>
+
+        </li>
+        <!-- END: Bakground Element -->
+        <li>
+            <img class="thumb" src="images/background/点兔S1_02.webp" alt=""/>
+            <img class="source" src="images/background/点兔S1_02.webp" alt=""/>
+        </li>
+        <li>
+            <img class="thumb" src="images/background/点兔S1_03.webp" alt=""/>
+            <img class="source" src="images/background/点兔S1_03.webp" alt=""/>
+        </li>
+        <li>
+            <img class="thumb" src="images/background/点兔S1_04.webp" alt=""/>
+            <img class="source" src="images/background/点兔S1_04.webp" alt=""/>
+        </li>
+        <li>
+            <img class="thumb" src="images/background/点兔S1_05.webp" alt=""/>
+            <img class="source" src="images/background/点兔S1_05.webp" alt=""/>
+        </li>
+        <li>
+            <img class="thumb" src="images/background/点兔S1_06.webp" alt=""/>
+            <img class="source" src="images/background/点兔S1_06.webp" alt=""/>
+        </li>
+        <li>
+            <img class="thumb" src="images/background/点兔S1_07.webp" alt=""/>
+            <img class="source" src="images/background/点兔S1_07.webp" alt=""/>
+        </li>
+        <li>
+            <img class="thumb" src="images/background/点兔S1_08.webp" alt=""/>
+            <img class="source" src="images/background/点兔S1_08.webp" alt=""/>
+        </li>
+        <li>
+            <img class="thumb" src="images/background/点兔S1_09.webp" alt=""/>
+            <img class="source" src="images/background/点兔S1_09.webp" alt=""/>
+        </li>
+        <li>
+            <img class="thumb" src="images/background/点兔S1_02.webp" alt=""/>
+            <img class="source" src="images/background/点兔S1_02.webp" alt=""/>
+        </li>
+        <li>
+            <img class="thumb" src="images/background/点兔S1_03.webp" alt=""/>
+            <img class="source" src="images/background/点兔S1_03.webp" alt=""/>
+        </li>
+        <li>
+            <img class="thumb" src="images/background/点兔S1_04.webp" alt=""/>
+            <img class="source" src="images/background/点兔S1_04.webp" alt=""/>
+        </li>
+        <li>
+            <img class="thumb" src="images/background/点兔S1_05.webp" alt=""/>
+            <img class="source" src="images/background/点兔S1_05.webp" alt=""/>
+        </li>
+        <li>
+            <img class="thumb" src="images/background/点兔S1_06.webp" alt=""/>
+            <img class="source" src="images/background/点兔S1_06.webp" alt=""/>
+        </li>
+        <li>
+            <img class="thumb" src="images/background/点兔S1_07.webp" alt=""/>
+            <img class="source" src="images/background/点兔S1_07.webp" alt=""/>
+        </li>
+        <li>
+            <img class="thumb" src="images/background/点兔S1_08.webp" alt=""/>
+            <img class="source" src="images/background/点兔S1_08.webp" alt=""/>
+        </li>
+        <li>
+            <img class="thumb" src="images/background/点兔S1_09.webp" alt=""/>
+            <img class="source" src="images/background/点兔S1_09.webp" alt=""/>
+        </li>
+        <li>
+            <img class="thumb" src="images/background/点兔S1_10.webp" alt=""/>
+            <img class="source" src="images/background/点兔S1_10.webp" alt=""/>
+        </li>
+        <li>
+            <img class="thumb" src="images/background/点兔S1_11.webp" alt=""/>
+            <img class="source" src="images/background/点兔S1_11.webp" alt=""/>
+        </li>
+        <li>
+            <img class="thumb" src="images/background/点兔S1_12.webp" alt=""/>
+            <img class="source" src="images/background/点兔S1_12.webp" alt=""/>
+        </li>
+        <li>
+            <img class="thumb" src="images/background/点兔S1_13.webp" alt=""/>
+            <img class="source" src="images/background/点兔S1_13.webp" alt=""/>
+        </li>
+        <li>
+            <img class="thumb" src="images/background/点兔S1_14.webp" alt=""/>
+            <img class="source" src="images/background/点兔S1_14.webp" alt=""/>
+        </li>
+        <li>
+            <img class="thumb" src="images/background/点兔S1_15.webp" alt=""/>
+            <img class="source" src="images/background/点兔S1_15.webp" alt=""/>
+        </li>
+        <li>
+            <img class="thumb" src="images/background/点兔S1_16.webp" alt=""/>
+            <img class="source" src="images/background/点兔S1_16.webp" alt=""/>
+        </li>
+        <li>
+            <img class="thumb" src="images/background/点兔S1_17.webp" alt=""/>
+            <img class="source" src="images/background/点兔S1_17.webp" alt=""/>
+        </li>
+        <li>
+            <img class="thumb" src="images/background/点兔S1_18.webp" alt=""/>
+            <img class="source" src="images/background/点兔S1_18.webp" alt=""/>
+        </li>
+        <li>
+            <img class="thumb" src="images/background/点兔S1_19.webp" alt=""/>
+            <img class="source" src="images/background/点兔S1_19.webp" alt=""/>
+        </li>
+        <li>
+            <img class="thumb" src="images/background/点兔S1_20.webp" alt=""/>
+            <img class="source" src="images/background/点兔S1_20.webp" alt=""/>
+        </li>
+        <li>
+            <img class="thumb" src="images/background/点兔S1_20.webp" alt=""/>
+            <img class="source" src="images/background/点兔S1_20.webp" alt=""/>
+        </li>
+        <li>
+            <img class="thumb" src="images/background/点兔S1_21.webp" alt=""/>
+            <img class="source" src="images/background/点兔S1_21.webp" alt=""/>
+        </li>
+        <li>
+            <img class="thumb" src="images/background/点兔S1_22.webp" alt=""/>
+            <img class="source" src="images/background/点兔S1_22.webp" alt=""/>
+        </li>
+        <li>
+            <img class="thumb" src="images/background/点兔S1_23.webp" alt=""/>
+            <img class="source" src="images/background/点兔S1_23.webp" alt=""/>
+        </li>
+        <li>
+            <img class="thumb" src="images/background/点兔S1_24.webp" alt=""/>
+            <img class="source" src="images/background/点兔S1_24.webp" alt=""/>
+        </li>
+        <li>
+            <img class="thumb" src="images/background/点兔S1_25.webp" alt=""/>
+            <img class="source" src="images/background/点兔S1_25.webp" alt=""/>
+        </li>
+        <li>
+            <img class="thumb" src="images/background/点兔S1_26.webp" alt=""/>
+            <img class="source" src="images/background/点兔S1_26.webp" alt=""/>
+        </li>
+        <li>
+            <img class="thumb" src="images/background/点兔S1_27.webp" alt=""/>
+            <img class="source" src="images/background/点兔S1_27.webp" alt=""/>
+        </li>
+    </ul>
+
+
+    <!-- BEGIN: Audio Controller; Please don't remove this element	-->
+    <div id="audioControls">
+        <a class="btn prev" href="javascript:void(0);"></a>
+        <a class="btn play" href="javascript:void(0);"></a>
+        <a class="btn pause" href="javascript:void(0);"></a>
+        <a class="btn next" href="javascript:void(0);"></a>
+    </div>
+    <!-- END: Audio Controller -->
+
+    <!-- BEGIN: Footer -->
+    <div id="footer">
+        <audio autoplay="autoplay">
+            <source src="./Daydream%20cafe.mp3" type="audio/mpeg"/>
+        </audio>
+
+        <!-- BEGIN: Background Controller Buttons -->
+        <div id="bgControl">
+            <a class="prev" href="javascript:void(0);" onClick="prevBg()"></a>
+            <a class="play" href="javascript:void(0);" onClick="playBg()"></a>
+            <a class="pause" href="javascript:void(0);" onClick="pauseBg()"></a>
+            <a class="next" href="javascript:void(0);" onClick="nextBg()"></a>
+        </div>
+        <!-- END: Background Controller Buttons -->
+    </div>
+    <!-- END: Footer -->
+
+    <!-- BEGIN: Audio List
+        // Every li includes a song url. But it doesn't contain file extensions.
+        Because some off browsers support .mp3 and others support .ogg format. It automatically recognise it.
+        For the wider browser support you should put filename.mp3, filename.ogg formats to the folder.
+    -->
+
+    <!-- END: Audio List -->
+</div>
+</body>
+</html>
